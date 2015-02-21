@@ -2,9 +2,9 @@ package com.esc_project.DatabaseConnection;
 
 public class Product {
 	
-	String mUid ;
-	String mName;
-	String mPrice;
+	private String mUid ;
+	private String mName;
+	private String mPrice;
 	
 	public Product(String uid, String name, String price) {
 		// TODO Auto-generated constructor stub

@@ -5,7 +5,7 @@ import com.esc_project.DatabaseConnection.DBController;
 
 public class TcpServerManager {
 
-	ClientController mClientController;
+	private ClientController mClientController;
 	
 	public TcpServerManager() {
 		// TODO Auto-generated constructor stub
