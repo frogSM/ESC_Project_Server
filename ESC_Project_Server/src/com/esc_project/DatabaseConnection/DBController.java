@@ -17,9 +17,9 @@ public class DBController {
 	 * **/
 
 	/** 서버 MySql 정보 **/
-	final String driverName = "com.mysql.jdbc.Driver";
-	final String DBName = "test";
-	final String dbURL = "jdbc:mysql://localhost/"+DBName;
+	private final String driverName = "com.mysql.jdbc.Driver";
+	private final String DBName = "test";
+	private final String dbURL = "jdbc:mysql://localhost/"+DBName;
 	
 	/** DB 테이블 선언 **/
 	private Product mProduct;
