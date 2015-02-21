@@ -3,7 +3,7 @@
   realizations="true" associations="true" dependencies="false" nesting-relationships="true">  
   <class id="1" language="java" name="com.esc_project.Parser.JsonHelper" project="ESC_Project_Server" 
     file="/ESC_Project_Server/src/com/esc_project/Parser/JsonHelper.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="720" y="507"/>    
+    <position height="-1" width="-1" x="653" y="574"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -12,7 +12,7 @@
   </class>  
   <class id="2" language="java" name="com.esc_project.TcpServerManager" project="ESC_Project_Server" 
     file="/ESC_Project_Server/src/com/esc_project/TcpServerManager.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="451" y="258"/>    
+    <position height="-1" width="-1" x="367" y="315"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -21,7 +21,7 @@
   </class>  
   <class id="3" language="java" name="com.esc_project.Constants" project="ESC_Project_Server" 
     file="/ESC_Project_Server/src/com/esc_project/Constants.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="715" y="224"/>    
+    <position height="-1" width="-1" x="653" y="340"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -31,7 +31,7 @@
   <class id="4" language="java" name="com.esc_project.ClientConnection.ClientController" project="ESC_Project_Server" 
     file="/ESC_Project_Server/src/com/esc_project/ClientConnection/ClientController.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="453" y="503"/>    
+    <position height="-1" width="-1" x="367" y="574"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -40,7 +40,7 @@
   </class>  
   <class id="5" language="java" name="com.esc_project.TcpServerMain" project="ESC_Project_Server" 
     file="/ESC_Project_Server/src/com/esc_project/TcpServerMain.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="450" y="85"/>    
+    <position height="-1" width="-1" x="366" y="152"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -49,7 +49,7 @@
   </class>  
   <class id="6" language="java" name="com.esc_project.DatabaseConnection.Product" project="ESC_Project_Server" 
     file="/ESC_Project_Server/src/com/esc_project/DatabaseConnection/Product.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="149" y="183"/>    
+    <position height="-1" width="-1" x="83" y="267"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -59,7 +59,7 @@
   <class id="7" language="java" name="com.esc_project.DatabaseConnection.DBController" project="ESC_Project_Server" 
     file="/ESC_Project_Server/src/com/esc_project/DatabaseConnection/DBController.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="151" y="502"/>    
+    <position height="-1" width="-1" x="83" y="574"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
