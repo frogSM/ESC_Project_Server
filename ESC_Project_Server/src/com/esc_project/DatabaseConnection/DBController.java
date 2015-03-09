@@ -74,7 +74,7 @@ public class DBController {
 			SQL = "select * from product where uid=\"" + uid + "\"";
 			result = stmt.executeQuery(SQL);
 			while(result.next()) {
-				mProduct = new Product(result.getString("uid"), result.getString("name"), result.getString("price"));
+				mProduct = new Product(result.getString("name"), result.getString("price"), result.getString("type"), result.getString("x"), result.getString("y"));
 			}
 			
 			closeDB();

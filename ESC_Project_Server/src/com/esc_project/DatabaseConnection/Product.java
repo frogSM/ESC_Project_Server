@@ -1,20 +1,20 @@
 package com.esc_project.DatabaseConnection;
 
 public class Product {
+
+	String name;
+	String price;
+	String type;
+	String x;
+	String y;
 	
-	private String uid ;
-	private String name;
-	private String price;
-	
-	public Product(String uid, String name, String price) {
+	public Product( String name, String price, String type, String x, String y) {
 		// TODO Auto-generated constructor stub
-		this.uid = uid;
 		this.name = name;
 		this.price = price;
-	}
-	
-	public void setUid(String uid) {
-		this.uid = uid;
+		this.type = type;
+		this.x = x;
+		this.y = y;
 	}
 	
 	public void setName(String name) {
@@ -25,15 +25,26 @@ public class Product {
 		this.price = price;
 	}
 	
-	public String getUid() {
-		return uid;
+	public void setLocation(String x, String y) { 
+		this.x = x;
+		this.y = y;
 	}
 	
+
 	public String getName() {
 		return name;
 	}
 	
 	public String getPrice() {
 		return price;
+	}
+	public String getType( ) { 
+		return type;
+	}
+	public String getX() { 
+		return x;
+	}
+	public String getY() { 
+		return y;
 	}
 }

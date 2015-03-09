@@ -18,7 +18,7 @@ public class ClientController implements Runnable{
 	
 	
 	/** 클라이언트 포트번호 설정 **/
-	final int clientPort = 7218;
+	final int clientPort = 8081;
 
 	private DBController mDBController;
 	
@@ -88,7 +88,6 @@ public class ClientController implements Runnable{
 		// TODO Auto-generated method stub
 
 		while (true) {
-			
 			getMessageFromClient();
 			System.out.println("Client 메시지 : " + clientSentence);
 
@@ -102,7 +101,7 @@ public class ClientController implements Runnable{
 		}
 
 	}
-	
+
 	/** 명령별로 외부DB에 접속하여 전송할 JSON메세지의 데이터부분을 받아오는 부분 **/
 	public Object sendCommandToDB(String command, Object data) {
 		Object obj = null;
