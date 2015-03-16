@@ -61,7 +61,7 @@ public class ClientController implements Runnable{
 		connectionSocket = welcomeSocket.accept();
 		
 		inFromClient = new BufferedReader(
-				new InputStreamReader(connectionSocket.getInputStream()));
+				new InputStreamReader(connectionSocket.getInputStream(), "EUC_KR"));
 
 		outToClient = new DataOutputStream(
 				connectionSocket.getOutputStream());
@@ -76,7 +76,8 @@ public class ClientController implements Runnable{
 	/** 클라이언트에게 메세지를 보낸다. **/
 	public void sendMessageToClient() {
 		try {
-			outToClient.writeBytes(serverSentence + '\n');
+			serverSentence += '\n';
+			outToClient.write(serverSentence.getBytes("EUC_KR"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
