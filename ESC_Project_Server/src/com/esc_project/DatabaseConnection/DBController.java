@@ -16,7 +16,7 @@ public class DBController {
 
 	/** 서버 MySql 정보 **/
 	private final String driverName = "com.mysql.jdbc.Driver";
-	private final String DBName = "test";
+	private final String DBName = "esc";
 	private final String dbURL = "jdbc:mysql://localhost/" + DBName;
 
 	/** DB 테이블 선언 **/
@@ -68,14 +68,14 @@ public class DBController {
 		try {
 
 			connectDB();
-
-			SQL = "select * from product where uid=\"" + uid + "\"";
+			
+			SQL = "select * from product T1, position T2 where T1.position_type = T2.position_type AND T1.product_uid=\"" + uid + "\"";
 			result = stmt.executeQuery(SQL);
 			while (result.next()) {
-				mProduct = new Product(result.getString("name"),
-						result.getString("price"), result.getString("type"),
-						result.getString("x"), result.getString("y"), 
-						result.getString("description"), result.getString("manufacturer"));
+				mProduct = new Product(result.getString("product_name"),
+						result.getString("product_price"), result.getString("product_description"),
+						result.getString("product_manufacturer"), result.getString("product_imgurl"), 
+						result.getString("position_type"), result.getString("position_x"), result.getString("position_y"));
 			}
 
 			closeDB();
