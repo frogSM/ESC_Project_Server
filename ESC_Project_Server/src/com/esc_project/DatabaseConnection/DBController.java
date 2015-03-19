@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 public class DBController {
 	/**
@@ -86,5 +87,32 @@ public class DBController {
 
 		return mProduct;
 	}
+	
+	public ArrayList<Product> All_Products_Info() {
+		
+		ArrayList<Product> dbData = new ArrayList<Product>();
+		String SQL;
+		
+		try {
 
+			connectDB();
+			
+			SQL = "select * from product T1, position T2 where T1.position_type = T2.position_type";
+			result = stmt.executeQuery(SQL);
+			while(result.next()) {
+				mProduct = new Product(result.getString("product_name"),
+						result.getString("product_price"), result.getString("product_description"),
+						result.getString("product_manufacturer"), result.getString("product_imgurl"), 
+						result.getString("position_type"), result.getString("position_x"), result.getString("position_y"));
+				dbData.add(mProduct);
+			}
+			
+			closeDB();
+			
+		} catch(SQLException e) {
+			e.printStackTrace();
+		}
+	
+		return dbData;
+	}
 }

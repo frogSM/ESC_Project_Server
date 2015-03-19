@@ -118,6 +118,13 @@ public class ClientController implements Runnable{
 			}
 			obj = products;
 			break;
+			
+		case Constants.All_Product_Info :
+			ArrayList<Product> allProducts = new ArrayList<Product>();
+			allProducts = mDBController.All_Products_Info();
+			
+			obj = allProducts;
+			break;
 		}
 		
 		return obj;

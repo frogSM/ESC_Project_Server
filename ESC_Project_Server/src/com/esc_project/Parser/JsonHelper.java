@@ -52,6 +52,10 @@ public class JsonHelper {
 			List<String> uid = gson.fromJson(object.get("uid"), ArrayList.class);
 			mObject = uid;
 			break;
+			
+		case Constants.All_Product_Info :
+			mObject = null;
+			break;
 		}
 	}
 	
