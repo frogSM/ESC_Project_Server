@@ -22,6 +22,7 @@ public class DBController {
 
 	/** DB 테이블 선언 **/
 	private Product mProduct;
+	private Notice notices;
 
 	/** MySql Connection 지역변수 **/
 	private Connection con;
@@ -89,6 +90,8 @@ public class DBController {
 	}
 	
 	public ArrayList<Product> All_Products_Info() {
+
+	
 		
 		ArrayList<Product> dbData = new ArrayList<Product>();
 		String SQL;
@@ -114,5 +117,37 @@ public class DBController {
 		}
 	
 		return dbData;
+	}
+	
+	public ArrayList<Notice> RequestNoticeDB ( ) {
+		
+		ArrayList<Notice> noticeDB  = new ArrayList<Notice>();
+		String SQL;
+		
+		try {
+
+			connectDB();
+			
+			SQL = "SELECT * FROM `customernotice`";
+			result = stmt.executeQuery(SQL);
+			
+			while(result.next()) {
+				ArrayList<String> contents = new ArrayList<String> ( ) ;
+				contents.add(result.getString("content"));
+				notices = new Notice(result.getString("name"),
+						result.getString("logo"), 
+						result.getString("title"),
+						result.getString("date"),
+						contents );
+				noticeDB.add(notices);
+			}
+			
+			closeDB();
+			
+		} catch(SQLException e) {
+			e.printStackTrace();
+		}
+	
+		return noticeDB;
 	}
 }

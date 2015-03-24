@@ -11,6 +11,7 @@ import java.util.List;
 
 import com.esc_project.Constants;
 import com.esc_project.DatabaseConnection.DBController;
+import com.esc_project.DatabaseConnection.Notice;
 import com.esc_project.DatabaseConnection.Product;
 import com.esc_project.Parser.JsonHelper;
 
@@ -124,6 +125,11 @@ public class ClientController implements Runnable{
 			allProducts = mDBController.All_Products_Info();
 			
 			obj = allProducts;
+			break;
+			
+		case Constants.requestNoticeDB :
+			ArrayList<Notice> notices = new ArrayList<Notice>( );
+			notices = mDBController.RequestNoticeDB();
 			break;
 		}
 		
