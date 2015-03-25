@@ -128,17 +128,19 @@ public class DBController {
 
 			connectDB();
 			
-			SQL = "SELECT * FROM `customernotice`";
+			SQL = "SELECT * FROM customernotice";
 			result = stmt.executeQuery(SQL);
 			
 			while(result.next()) {
-				ArrayList<String> contents = new ArrayList<String> ( ) ;
-				contents.add(result.getString("content"));
-				notices = new Notice(result.getString("name"),
+				ArrayList<String> content = new ArrayList<String> ( ) ;
+				content.add( result.getString("content") ) ;
+				notices = new Notice(
+						result.getString("number"),
 						result.getString("logo"), 
 						result.getString("title"),
 						result.getString("date"),
-						contents );
+						content);
+				
 				noticeDB.add(notices);
 			}
 			

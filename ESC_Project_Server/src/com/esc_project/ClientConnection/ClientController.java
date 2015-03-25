@@ -130,6 +130,7 @@ public class ClientController implements Runnable{
 		case Constants.requestNoticeDB :
 			ArrayList<Notice> notices = new ArrayList<Notice>( );
 			notices = mDBController.RequestNoticeDB();
+			obj = notices ;
 			break;
 		}
 		

@@ -56,6 +56,10 @@ public class JsonHelper {
 		case Constants.All_Product_Info :
 			mObject = null;
 			break;
+			
+		case Constants.requestNoticeDB :
+			mObject = null;
+			break;
 		}
 	}
 	
