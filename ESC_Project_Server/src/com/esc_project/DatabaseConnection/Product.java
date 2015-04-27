@@ -3,11 +3,11 @@ package com.esc_project.DatabaseConnection;
 public class Product {
 
 	String name;
-	String price_now;
-	String price_before_one;
-	String price_before_two;
-	String price_before_three;
-	String price_before_six;
+	String priceNow;
+	String priceBeforeOne;
+	String priceBeforeTwo;
+	String priceBeforeThree;
+	String priceBeforeSix;
 	String description;
 	String manufacturer;
 	String imgURL;
@@ -15,15 +15,15 @@ public class Product {
 	String x;
 	String y;
 	
-	public Product( String name, String price_now, String price_before_one, String price_before_two, String price_before_three,
-			String price_before_six, String description, String manufacturer, String imgURL, String type, String x, String y) {
+	public Product( String name, String price_now, String priceBeforeOne, String priceBeforeTwo, String priceBeforeThree,
+			String priceBeforeSix, String description, String manufacturer, String imgURL, String type, String x, String y) {
 		// TODO Auto-generated constructor stub
 		this.name = name;
-		this.price_now = price_now;
-		this.price_before_one = price_before_one;
-		this.price_before_two = price_before_two;
-		this.price_before_three = price_before_three;
-		this.price_before_six = price_before_six;
+		this.priceNow = price_now;
+		this.priceBeforeOne = priceBeforeOne;
+		this.priceBeforeTwo = priceBeforeTwo;
+		this.priceBeforeThree = priceBeforeThree;
+		this.priceBeforeSix = priceBeforeSix;
 		this.description = description;
 		this.manufacturer = manufacturer;
 		this.imgURL = imgURL;
@@ -37,23 +37,23 @@ public class Product {
 	}
 	
 	public void setPriceNow(String price_now) {
-		this.price_now = price_now;
+		this.priceNow = price_now;
 	}
 	
-	public void setPriceBeforeOne(String price_before_one) {
-		this.price_before_one = price_before_one;
+	public void setPriceBeforeOne(String priceBeforeOne) {
+		this.priceBeforeOne = priceBeforeOne;
 	}
 	
-	public void setPriceBeforeTwo(String price_before_two) {
-		this.price_before_two = price_before_two;
+	public void setPriceBeforeTwo(String priceBeforeTwo) {
+		this.priceBeforeTwo = priceBeforeTwo;
 	}
 	
-	public void setPriceBeforeThree(String price_before_three) {
-		this.price_before_three = price_before_three;
+	public void setPriceBeforeThree(String priceBeforeThree) {
+		this.priceBeforeThree = priceBeforeThree;
 	}
 	
 	public void setPriceBeforeSix(String price_before_six) {
-		this.price_before_six = price_before_six;
+		this.priceBeforeSix = price_before_six;
 	}
 	
 	public void setDescription( String description ) {
@@ -82,23 +82,23 @@ public class Product {
 	}
 
 	public String getPriceNow() {
-		return price_now;
+		return priceNow;
 	}
 	
 	public String getPriceBeforeOne() {
-		return price_before_one;
+		return priceBeforeOne;
 	}
 	
 	public String getPriceBeforeTwo() {
-		return price_before_two;
+		return priceBeforeTwo;
 	}
 	
 	public String getPriceBeforeThree() {
-		return price_before_three;
+		return priceBeforeThree;
 	}
 	
 	public String getPriceBeforeSix() {
-		return price_before_six;
+		return priceBeforeSix;
 	}
 	
 	public String getDescription( ) {
