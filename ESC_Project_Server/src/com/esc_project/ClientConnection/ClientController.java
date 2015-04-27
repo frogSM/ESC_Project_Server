@@ -13,6 +13,7 @@ import com.esc_project.Constants;
 import com.esc_project.DatabaseConnection.DBController;
 import com.esc_project.DatabaseConnection.Notice;
 import com.esc_project.DatabaseConnection.Product;
+import com.esc_project.DatabaseConnection.QuestionAndAnswer;
 import com.esc_project.Parser.JsonHelper;
 
 public class ClientController implements Runnable{
@@ -107,6 +108,7 @@ public class ClientController implements Runnable{
 	/** 명령별로 외부DB에 접속하여 전송할 JSON메세지의 데이터부분을 받아오는 부분 **/
 	public Object sendCommandToDB(String command, Object data) {
 		Object obj = null;
+		String questionType;
 		
 		switch(command) {
 		case Constants.Uid_Info :
@@ -128,9 +130,17 @@ public class ClientController implements Runnable{
 			break;
 			
 		case Constants.requestNoticeDB :
+			
 			ArrayList<Notice> notices = new ArrayList<Notice>( );
 			notices = mDBController.RequestNoticeDB();
 			obj = notices ;
+			break;
+			
+		case Constants.requestBest5QADB :
+			ArrayList<QuestionAndAnswer> questionAndAnswers = new ArrayList<QuestionAndAnswer> () ;
+			questionType = "best5";
+			questionAndAnswers = mDBController.RequestQuestionAndAnswer(questionType);
+			obj = questionAndAnswers;
 			break;
 		}
 		

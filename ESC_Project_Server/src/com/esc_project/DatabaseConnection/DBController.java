@@ -7,6 +7,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import com.sun.org.apache.xalan.internal.xsltc.compiler.util.ResultTreeType;
+
 public class DBController {
 	/**
 	 * - DBController 클래스 - *
@@ -23,6 +25,7 @@ public class DBController {
 	/** DB 테이블 선언 **/
 	private Product mProduct;
 	private Notice notices;
+	private QuestionAndAnswer questionAndAnswers;
 
 	/** MySql Connection 지역변수 **/
 	private Connection con;
@@ -75,7 +78,8 @@ public class DBController {
 			result = stmt.executeQuery(SQL);
 			while (result.next()) {
 				mProduct = new Product(result.getString("product_name"),
-						result.getString("product_price"), result.getString("product_description"),
+						result.getString("product_price_now"), result.getString("product_price_before_one"), result.getString("product_price_before_two"),
+						result.getString("product_price_before_three"), result.getString("product_price_before_six"), result.getString("product_description"),
 						result.getString("product_manufacturer"), result.getString("product_imgurl"), 
 						result.getString("position_type"), result.getString("position_x"), result.getString("position_y"));
 			}
@@ -104,7 +108,8 @@ public class DBController {
 			result = stmt.executeQuery(SQL);
 			while(result.next()) {
 				mProduct = new Product(result.getString("product_name"),
-						result.getString("product_price"), result.getString("product_description"),
+						result.getString("product_price_now"), result.getString("product_price_before_one"), result.getString("product_price_before_two"),
+						result.getString("product_price_before_three"), result.getString("product_price_before_six"), result.getString("product_description"),
 						result.getString("product_manufacturer"), result.getString("product_imgurl"), 
 						result.getString("position_type"), result.getString("position_x"), result.getString("position_y"));
 				dbData.add(mProduct);
@@ -132,14 +137,12 @@ public class DBController {
 			result = stmt.executeQuery(SQL);
 			
 			while(result.next()) {
-				ArrayList<String> content = new ArrayList<String> ( ) ;
-				content.add( result.getString("content") ) ;
 				notices = new Notice(
 						result.getString("number"),
 						result.getString("logo"), 
 						result.getString("title"),
 						result.getString("date"),
-						content);
+						result.getString("content") );
 				
 				noticeDB.add(notices);
 			}
@@ -152,4 +155,37 @@ public class DBController {
 	
 		return noticeDB;
 	}
+	
+	public ArrayList<QuestionAndAnswer> RequestQuestionAndAnswer( String questionType ) { 
+		ArrayList<QuestionAndAnswer> questionAndAnswerDB = new ArrayList<QuestionAndAnswer> ( ) ;
+		String SQL;
+		
+		SQL = "SELECT * FROM `esc`.`questiontype`  WHERE `questiontype` = '"+questionType +"'" ; 
+		
+		try {
+			
+			connectDB( );
+			result = stmt.executeQuery(SQL);
+			
+			while ( result.next() ) {
+				questionAndAnswers = new QuestionAndAnswer ( 
+						result.getString("questionTitle"), 
+						result.getString("answercontent") );
+				
+				questionAndAnswerDB.add(questionAndAnswers);
+			}
+			closeDB( );
+ 
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return questionAndAnswerDB;
+		
+	}
+	
+	
+	
+	
 }

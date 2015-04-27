@@ -60,6 +60,10 @@ public class JsonHelper {
 		case Constants.requestNoticeDB :
 			mObject = null;
 			break;
+			
+		case Constants.requestBest5QADB :
+			mObject = null;
+			break;
 		}
 	}
 	

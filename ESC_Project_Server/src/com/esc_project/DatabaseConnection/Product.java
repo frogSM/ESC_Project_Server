@@ -3,7 +3,11 @@ package com.esc_project.DatabaseConnection;
 public class Product {
 
 	String name;
-	String price;
+	String price_now;
+	String price_before_one;
+	String price_before_two;
+	String price_before_three;
+	String price_before_six;
 	String description;
 	String manufacturer;
 	String imgURL;
@@ -11,11 +15,15 @@ public class Product {
 	String x;
 	String y;
 	
-	public Product( String name, String price, String description, String manufacturer, String imgURL,
-			String type, String x, String y) {
+	public Product( String name, String price_now, String price_before_one, String price_before_two, String price_before_three,
+			String price_before_six, String description, String manufacturer, String imgURL, String type, String x, String y) {
 		// TODO Auto-generated constructor stub
 		this.name = name;
-		this.price = price;
+		this.price_now = price_now;
+		this.price_before_one = price_before_one;
+		this.price_before_two = price_before_two;
+		this.price_before_three = price_before_three;
+		this.price_before_six = price_before_six;
 		this.description = description;
 		this.manufacturer = manufacturer;
 		this.imgURL = imgURL;
@@ -28,8 +36,24 @@ public class Product {
 		this.name = name;
 	}
 	
-	public void setPrice(String price) {
-		this.price = price;
+	public void setPriceNow(String price_now) {
+		this.price_now = price_now;
+	}
+	
+	public void setPriceBeforeOne(String price_before_one) {
+		this.price_before_one = price_before_one;
+	}
+	
+	public void setPriceBeforeTwo(String price_before_two) {
+		this.price_before_two = price_before_two;
+	}
+	
+	public void setPriceBeforeThree(String price_before_three) {
+		this.price_before_three = price_before_three;
+	}
+	
+	public void setPriceBeforeSix(String price_before_six) {
+		this.price_before_six = price_before_six;
 	}
 	
 	public void setDescription( String description ) {
@@ -57,8 +81,24 @@ public class Product {
 		return name;
 	}
 
-	public String getPrice() {
-		return price;
+	public String getPriceNow() {
+		return price_now;
+	}
+	
+	public String getPriceBeforeOne() {
+		return price_before_one;
+	}
+	
+	public String getPriceBeforeTwo() {
+		return price_before_two;
+	}
+	
+	public String getPriceBeforeThree() {
+		return price_before_three;
+	}
+	
+	public String getPriceBeforeSix() {
+		return price_before_six;
 	}
 	
 	public String getDescription( ) {
