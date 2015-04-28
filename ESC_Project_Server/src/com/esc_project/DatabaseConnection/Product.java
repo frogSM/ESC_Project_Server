@@ -10,6 +10,7 @@ public class Product {
 	String priceBeforeFour;
 	String priceBeforeFive;
 	String priceBeforeSix;
+	String score;
 	String description;
 	String manufacturer;
 	String imgURL;
@@ -18,7 +19,7 @@ public class Product {
 	String y;
 	
 	public Product( String name, String price_now, String priceBeforeOne, String priceBeforeTwo, String priceBeforeThree,
-			String priceBeforeFour, String priceBeforeFive, String priceBeforeSix, String description, 
+			String priceBeforeFour, String priceBeforeFive, String priceBeforeSix, String score, String description, 
 			String manufacturer, String imgURL, String type, String x, String y) {
 		// TODO Auto-generated constructor stub
 		this.name = name;
@@ -29,6 +30,7 @@ public class Product {
 		this.priceBeforeFour = priceBeforeFour;
 		this.priceBeforeFive = priceBeforeFive;
 		this.priceBeforeSix = priceBeforeSix;
+		this.score = score;
 		this.description = description;
 		this.manufacturer = manufacturer;
 		this.imgURL = imgURL;
@@ -67,6 +69,10 @@ public class Product {
 	
 	public void setPriceBeforeSix(String price_before_six) {
 		this.priceBeforeSix = price_before_six;
+	}
+	
+	public void setScore(String score) {
+		this.score = score;
 	}
 	
 	public void setDescription( String description ) {
@@ -120,6 +126,10 @@ public class Product {
 	
 	public String getPriceBeforeSix() {
 		return priceBeforeSix;
+	}
+	
+	public String getScore() {
+		return score;
 	}
 	
 	public String getDescription( ) {
