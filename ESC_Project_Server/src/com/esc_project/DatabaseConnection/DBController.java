@@ -79,9 +79,9 @@ public class DBController {
 			while (result.next()) {
 				mProduct = new Product(result.getString("product_name"),
 						result.getString("product_price_now"), result.getString("product_price_before_one"), result.getString("product_price_before_two"),
-						result.getString("product_price_before_three"), result.getString("product_price_before_six"), result.getString("product_description"),
-						result.getString("product_manufacturer"), result.getString("product_imgurl"), 
-						result.getString("position_type"), result.getString("position_x"), result.getString("position_y"));
+						result.getString("product_price_before_three"), result.getString("product_price_before_four"), result.getString("product_price_before_five"),
+						result.getString("product_price_before_six"), result.getString("product_description"), result.getString("product_manufacturer"), 
+						result.getString("product_imgurl"), result.getString("position_type"), result.getString("position_x"), result.getString("position_y"));
 			}
 
 			closeDB();
@@ -109,9 +109,9 @@ public class DBController {
 			while(result.next()) {
 				mProduct = new Product(result.getString("product_name"),
 						result.getString("product_price_now"), result.getString("product_price_before_one"), result.getString("product_price_before_two"),
-						result.getString("product_price_before_three"), result.getString("product_price_before_six"), result.getString("product_description"),
-						result.getString("product_manufacturer"), result.getString("product_imgurl"), 
-						result.getString("position_type"), result.getString("position_x"), result.getString("position_y"));
+						result.getString("product_price_before_three"), result.getString("product_price_before_four"), result.getString("product_price_before_five"),
+						result.getString("product_price_before_six"), result.getString("product_description"), result.getString("product_manufacturer"), 
+						result.getString("product_imgurl"), result.getString("position_type"), result.getString("position_x"), result.getString("position_y"));
 				dbData.add(mProduct);
 			}
 			

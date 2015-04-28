@@ -7,6 +7,8 @@ public class Product {
 	String priceBeforeOne;
 	String priceBeforeTwo;
 	String priceBeforeThree;
+	String priceBeforeFour;
+	String priceBeforeFive;
 	String priceBeforeSix;
 	String description;
 	String manufacturer;
@@ -16,13 +18,16 @@ public class Product {
 	String y;
 	
 	public Product( String name, String price_now, String priceBeforeOne, String priceBeforeTwo, String priceBeforeThree,
-			String priceBeforeSix, String description, String manufacturer, String imgURL, String type, String x, String y) {
+			String priceBeforeFour, String priceBeforeFive, String priceBeforeSix, String description, 
+			String manufacturer, String imgURL, String type, String x, String y) {
 		// TODO Auto-generated constructor stub
 		this.name = name;
 		this.priceNow = price_now;
 		this.priceBeforeOne = priceBeforeOne;
 		this.priceBeforeTwo = priceBeforeTwo;
 		this.priceBeforeThree = priceBeforeThree;
+		this.priceBeforeFour = priceBeforeFour;
+		this.priceBeforeFive = priceBeforeFive;
 		this.priceBeforeSix = priceBeforeSix;
 		this.description = description;
 		this.manufacturer = manufacturer;
@@ -50,6 +55,14 @@ public class Product {
 	
 	public void setPriceBeforeThree(String priceBeforeThree) {
 		this.priceBeforeThree = priceBeforeThree;
+	}
+	
+	public void setPriceBeforeFour(String priceBeforeFour) {
+		this.priceBeforeFour = priceBeforeFour;
+	}
+	
+	public void setPriceBeforeFive(String priceBeforeFive) {
+		this.priceBeforeFive = priceBeforeFive;
 	}
 	
 	public void setPriceBeforeSix(String price_before_six) {
@@ -95,6 +108,14 @@ public class Product {
 	
 	public String getPriceBeforeThree() {
 		return priceBeforeThree;
+	}
+	
+	public String getPriceBeforeFour() {
+		return priceBeforeFour;
+	}
+	
+	public String getPriceBeforeFive() {
+		return priceBeforeFive;
 	}
 	
 	public String getPriceBeforeSix() {
