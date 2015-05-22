@@ -99,6 +99,7 @@ public class DBController {
 	
 		
 		ArrayList<Product> dbData = new ArrayList<Product>();
+		
 		String SQL;
 		
 		try {
@@ -117,6 +118,7 @@ public class DBController {
 				dbData.add(mProduct);
 			}
 			
+		
 			closeDB();
 			
 		} catch(SQLException e) {

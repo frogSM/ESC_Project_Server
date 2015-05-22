@@ -5,5 +5,13 @@
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/GSON"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/JSON"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/MYSQL"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/sh514/Desktop/Mahout_Library/commons-math3-3.5.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/sh514/Desktop/Mahout_Library/guava-18.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/sh514/Desktop/Mahout_Library/mahout-core-0.9.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/sh514/Desktop/Mahout_Library/mahout-hdfs-0.10.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/sh514/Desktop/Mahout_Library/mahout-integration-0.10.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/sh514/Desktop/Mahout_Library/mahout-math-0.10.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/sh514/Desktop/Mahout_Library/slf4j-api-1.7.12.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/sh514/Desktop/Mahout_Library/slf4j-nop-1.7.12.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
