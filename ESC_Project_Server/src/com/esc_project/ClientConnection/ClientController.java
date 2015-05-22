@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.net.SocketException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -71,7 +72,8 @@ public class ClientController implements Runnable{
 		clientSentence = inFromClient.readLine();
 		} catch(Exception e) {
 			e.printStackTrace();
-		}
+		} 
+		
 	}
 	
 	
