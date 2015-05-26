@@ -2,6 +2,7 @@ package com.esc_project.DatabaseConnection;
 
 public class Product {
 
+	int number;
 	String name;
 	String priceNow;
 	String priceBeforeOne;
@@ -18,10 +19,12 @@ public class Product {
 	String x;
 	String y;
 	
-	public Product( String name, String price_now, String priceBeforeOne, String priceBeforeTwo, String priceBeforeThree,
+	public Product( int number, String name, String price_now, String priceBeforeOne, String priceBeforeTwo, String priceBeforeThree,
 			String priceBeforeFour, String priceBeforeFive, String priceBeforeSix, String score, String description, 
-			String manufacturer, String imgURL, String type, String x, String y) {
+			String manufacturer, String imgURL, String type, String x, String y ) {
 		// TODO Auto-generated constructor stub
+		
+		this.number = number;
 		this.name = name;
 		this.priceNow = price_now;
 		this.priceBeforeOne = priceBeforeOne;
@@ -37,6 +40,10 @@ public class Product {
 		this.type = type;
 		this.x = x;
 		this.y = y;
+	}
+	
+	public void setNumber(int number) {
+		this.number = number;
 	}
 	
 	public void setName(String name) {
@@ -94,6 +101,10 @@ public class Product {
 	public void setLocation(String x, String y) { 
 		this.x = x;
 		this.y = y;
+	}
+	
+	public int getNumber() {
+		return number;
 	}
 
 	public String getName() {

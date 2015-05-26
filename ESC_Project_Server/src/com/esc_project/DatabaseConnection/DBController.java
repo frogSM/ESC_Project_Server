@@ -6,7 +6,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.List;
 
+import org.apache.mahout.cf.taste.recommender.RecommendedItem;
+
+import com.esc_project.Recommender.ItemBasedRecommender;
+import com.esc_project.Recommender.RecommendProduct;
 import com.sun.org.apache.xalan.internal.xsltc.compiler.util.ResultTreeType;
 
 public class DBController {
@@ -26,6 +31,7 @@ public class DBController {
 	private Product mProduct;
 	private Notice notices;
 	private QuestionAndAnswer questionAndAnswers;
+	private RecommendProduct mRecommendProduct;
 
 	/** MySql Connection 지역변수 **/
 	private Connection con;
@@ -77,7 +83,8 @@ public class DBController {
 			SQL = "select * from product T1, position T2 where T1.position_type = T2.position_type AND T1.product_uid=\"" + uid + "\"";
 			result = stmt.executeQuery(SQL);
 			while (result.next()) {
-				mProduct = new Product(result.getString("product_name"),
+				mProduct = new Product(result.getInt("product_recoNumber"),
+						result.getString("product_name"),
 						result.getString("product_price_now"), result.getString("product_price_before_one"), result.getString("product_price_before_two"),
 						result.getString("product_price_before_three"), result.getString("product_price_before_four"), result.getString("product_price_before_five"),
 						result.getString("product_price_before_six"), result.getString("product_score"), result.getString("product_description"), 
@@ -109,7 +116,8 @@ public class DBController {
 			SQL = "select * from product T1, position T2 where T1.position_type = T2.position_type";
 			result = stmt.executeQuery(SQL);
 			while(result.next()) {
-				mProduct = new Product(result.getString("product_name"),
+				mProduct = new Product(result.getInt("product_number"),
+						result.getString("product_name"),
 						result.getString("product_price_now"), result.getString("product_price_before_one"), result.getString("product_price_before_two"),
 						result.getString("product_price_before_three"), result.getString("product_price_before_four"), result.getString("product_price_before_five"),
 						result.getString("product_price_before_six"), result.getString("product_score"), result.getString("product_description"), 
@@ -189,7 +197,48 @@ public class DBController {
 		
 	}
 	
-	
-	
+	public ArrayList<RecommendProduct> RecommendedProduct_Info(int productNumber) {
+		
+		ArrayList<RecommendProduct> recommendedProducts = new ArrayList<RecommendProduct>();
+		String SQL;
+		
+		//1.1 상품 번호를 Long형으로 변환한다.
+		Long prdouctLongNumber = new Long(productNumber);
+		
+		//2. 추천기를 생성한다.
+		ItemBasedRecommender itemBasedRecommender = new ItemBasedRecommender();
+		
+		//3. 5개의 추천 상품을 반환받는다.
+		List<RecommendedItem>recommendedItems = itemBasedRecommender.Recommender(prdouctLongNumber);
+		
+		
+		try {
+
+			connectDB();
+			
+			for(int i=0 ; i<recommendedItems.size() ; i++) {
+				
+				SQL = "select product_imgurl, product_name, product_price_now from product where product_number=" + String.valueOf(recommendedItems.get(i).getItemID());
+				result = stmt.executeQuery(SQL);
+				
+				
+				while(result.next()) {
+					mRecommendProduct = new RecommendProduct(
+							result.getString("product_imgurl"), 
+							result.getString("product_name"),
+							result.getString("product_price_now"));
+					
+					recommendedProducts.add(mRecommendProduct);
+				}
+			}
+			
+			closeDB();
+			
+		} catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return recommendedProducts;
+	}
 	
 }

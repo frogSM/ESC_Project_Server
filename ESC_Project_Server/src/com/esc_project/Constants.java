@@ -5,6 +5,7 @@ public class Constants {
 	/**  JsonHelper & ClientController Constants **/
 	public final static String Uid_Info = "Uid_Info";
 	public final static String All_Product_Info = "All_Product_Info";
+	public final static String RecommendedProduct_Info = "RecommendedProduct_Info"; 
 	
 	/** 공지사항 데이터베이스 요청 **/
 	public final static String requestNoticeDB = "requestNoticeDB";
@@ -20,6 +21,7 @@ public class Constants {
 	
 	/** 자주하는 질문 중 마트이용 질답 요청**/
 	public final static String requestUsingMartQADB = "requestUsingMartQADB";
+	
 	
 	/** Thread Message Constants **/
 	public final static int THREAD_MESSAGE = 0;

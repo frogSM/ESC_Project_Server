@@ -16,6 +16,7 @@ import com.esc_project.DatabaseConnection.Notice;
 import com.esc_project.DatabaseConnection.Product;
 import com.esc_project.DatabaseConnection.QuestionAndAnswer;
 import com.esc_project.Parser.JsonHelper;
+import com.esc_project.Recommender.RecommendProduct;
 
 public class ClientController implements Runnable{
 	
@@ -143,6 +144,13 @@ public class ClientController implements Runnable{
 			questionType = "best5";
 			questionAndAnswers = mDBController.RequestQuestionAndAnswer(questionType);
 			obj = questionAndAnswers;
+			break;
+			
+		case Constants.RecommendedProduct_Info :
+			List<RecommendProduct> recomendedProducts = new ArrayList<RecommendProduct>();
+			recomendedProducts = mDBController.RecommendedProduct_Info((int)data);
+			
+			obj = recomendedProducts;
 			break;
 		}
 		

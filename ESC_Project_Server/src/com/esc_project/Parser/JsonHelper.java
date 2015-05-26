@@ -6,6 +6,7 @@ import java.util.List;
 import net.sf.json.JSONObject;
 
 import com.esc_project.Constants;
+import com.esc_project.Recommender.RecommendProduct;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -64,6 +65,10 @@ public class JsonHelper {
 		case Constants.requestBest5QADB :
 			mObject = null;
 			break;
+			
+		case Constants.RecommendedProduct_Info :
+			int number = gson.fromJson(object.get("number"), Integer.class);
+			mObject = number;
 		}
 	}
 	
