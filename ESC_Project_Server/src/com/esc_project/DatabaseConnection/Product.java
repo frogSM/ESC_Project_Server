@@ -167,4 +167,26 @@ public class Product {
 		return this.y;
 	}
 	
+	/** Product √ ±‚»≠! **/
+	
+	public void InitializeProduct ( ) {
+		
+		this.description = "";
+		this.imgURL = "";
+		this.manufacturer ="";
+		this.name = "";
+		this.number = 0;
+		this.priceBeforeFive = "";
+		this.priceBeforeFour = "";
+		this.priceBeforeOne = "";
+		this.priceBeforeSix = "";
+		this.priceBeforeThree = "";
+		this.priceBeforeTwo = "";
+		this.priceNow = "";
+		this.score = "";
+		this.type ="";
+		this.x = "";
+		this.y = "";
+		
+	}
 }

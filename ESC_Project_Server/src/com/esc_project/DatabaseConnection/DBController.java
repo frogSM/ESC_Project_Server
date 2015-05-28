@@ -80,16 +80,31 @@ public class DBController {
 
 			connectDB();
 			
-			SQL = "select * from product T1, position T2 where T1.position_type = T2.position_type AND T1.product_uid=\"" + uid + "\"";
+			SQL = "select * from product T1, position T2 where T1.position_type = T2.position_type AND T1.product_uid='" + uid + "'";
 			result = stmt.executeQuery(SQL);
+			
+			/** product ∞¥√º √ ±‚»≠! **/
+			//mProduct.InitializeProduct();
+			
 			while (result.next()) {
-				mProduct = new Product(result.getInt("product_recoNumber"),
+				
+				mProduct = new Product(
+						result.getInt("product_number"),
 						result.getString("product_name"),
-						result.getString("product_price_now"), result.getString("product_price_before_one"), result.getString("product_price_before_two"),
-						result.getString("product_price_before_three"), result.getString("product_price_before_four"), result.getString("product_price_before_five"),
-						result.getString("product_price_before_six"), result.getString("product_score"), result.getString("product_description"), 
-						result.getString("product_manufacturer"), result.getString("product_imgurl"), result.getString("position_type"), 
-						result.getString("position_x"), result.getString("position_y"));
+						result.getString("product_price_now"), 
+						result.getString("product_price_before_one"), 
+						result.getString("product_price_before_two"),
+						result.getString("product_price_before_three"), 
+						result.getString("product_price_before_four"), 
+						result.getString("product_price_before_five"),
+						result.getString("product_price_before_six"), 
+						result.getString("product_score"), 
+						result.getString("product_description"), 
+						result.getString("product_manufacturer"), 
+						result.getString("product_imgurl"), 
+						result.getString("position_type"), 
+						result.getString("position_x"), 
+						result.getString("position_y"));
 			}
 
 			closeDB();
