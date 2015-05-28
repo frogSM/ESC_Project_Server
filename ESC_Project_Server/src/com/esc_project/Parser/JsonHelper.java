@@ -69,6 +69,13 @@ public class JsonHelper {
 		case Constants.RecommendedProduct_Info :
 			int number = gson.fromJson(object.get("number"), Integer.class);
 			mObject = number;
+			break;
+			
+		case Constants.CustomerCart_Info_STORE : 
+			List<String> numberList = gson.fromJson(object.get("number"), ArrayList.class);
+			mObject = numberList;
+			break;
+			
 		}
 	}
 	

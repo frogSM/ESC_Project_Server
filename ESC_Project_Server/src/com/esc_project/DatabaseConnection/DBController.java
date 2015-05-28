@@ -25,7 +25,7 @@ public class DBController {
 	/** 서버 MySql 정보 **/
 	private final String driverName = "com.mysql.jdbc.Driver";
 	private final String DBName = "esc";
-	private final String dbURL = "jdbc:mysql://localhost/" + DBName;
+	private final String dbURL = "jdbc:mysql://localhost/" + DBName + "?useUnicode=true&characterEncoding=euckr";
 
 	/** DB 테이블 선언 **/
 	private Product mProduct;
@@ -254,6 +254,46 @@ public class DBController {
 		}
 		
 		return recommendedProducts;
+	}
+	
+	public void CustomerCart_Info_STORE(ArrayList<String> numberList) {
+		String SQL;
+
+		try {
+
+			connectDB();
+
+			SQL = "DELETE FROM customercart;";
+			stmt.executeUpdate(SQL);
+
+			for (int i = 0; i < numberList.size(); i++) {
+				
+				SQL = "SELECT `product_number` , `product_name` , `product_price_now` , `product_manufacturer` , `position_type` FROM `product`  WHERE `product_number` =" + numberList.get(i) + "";
+				result = stmt.executeQuery(SQL);
+				
+				while (result.next()) {
+					SQL = "INSERT INTO `esc`.`customercart` (`customercart_number` ,`customercart_name` ,`customercart_price` ,`customercart_count`, `customercart_manufacturer` ,`customercart_type` ) VALUES ( '"
+							+ result.getInt("product_number")
+							+ "', '"
+							+ result.getString("product_name")
+							+ "', '"
+							+ result.getString("product_price_now")
+							+ "', '1', '"
+							+ result.getString("product_manufacturer")
+							+ "', '"
+							+ result.getString("position_type") + "');";
+				}
+				
+				stmt.executeUpdate(SQL);
+
+			}
+
+			closeDB();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
 	}
 	
 }
