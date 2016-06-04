@@ -17,7 +17,6 @@ import com.esc_project.DatabaseConnection.Product;
 import com.esc_project.DatabaseConnection.QuestionAndAnswer;
 import com.esc_project.Parser.JsonHelper;
 import com.esc_project.Recommender.RecommendProduct;
-import com.mysql.fabric.xmlrpc.base.Array;
 
 public class ClientController implements Runnable{
 	

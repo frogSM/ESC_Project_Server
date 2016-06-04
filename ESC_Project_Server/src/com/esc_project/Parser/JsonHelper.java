@@ -17,6 +17,7 @@ public class JsonHelper {
 	private String mType;
 	/** JSON 데이터부분 **/
 	private Object mObject ;
+	private String test;
 	
 	public JsonHelper() {
 		mObject = new Object();

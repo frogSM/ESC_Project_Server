@@ -8,8 +8,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.mahout.cf.taste.recommender.RecommendedItem;
-
 import com.esc_project.Recommender.ItemBasedRecommender;
 import com.esc_project.Recommender.RecommendProduct;
 import com.sun.org.apache.xalan.internal.xsltc.compiler.util.ResultTreeType;
